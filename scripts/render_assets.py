@@ -4,6 +4,8 @@
 
 public/icon.png                  90 x 90 plugin icon (framer.json "icon"; Framer recommends 90 x 90 for images and
                                  rounds the corners itself), from brand/gunsnprices-icon-512.png
+assets/icon-512.png              the same square icon at 512 x 512, in case a form asks for a larger icon
+assets/avatar-400.png            400 x 400 creator profile picture (the size the Marketplace shows)
 assets/thumbnail-1-1600x1200.png a "Guns and ammo" collection as the CMS shows it, with the values the plugin syncs
 assets/thumbnail-2-1600x1200.png a "Calibers" collection and the canvas cost-per-round text
 
@@ -76,6 +78,8 @@ def icon():
     sq = square_icon()
     os.makedirs(PUBLIC, exist_ok=True)
     sq.resize((90, 90), Image.LANCZOS).save(os.path.join(PUBLIC, "icon.png"), optimize=True)
+    sq.save(os.path.join(ASSETS, "icon-512.png"), optimize=True)
+    sq.resize((400, 400), Image.LANCZOS).save(os.path.join(ASSETS, "avatar-400.png"), optimize=True)
     return Image.open(BRAND_ICON).convert("RGBA")
 
 
@@ -217,7 +221,13 @@ def main():
     brand = icon()
     thumbnail_products(brand, data)
     thumbnail_calibers(brand, data)
-    for path in ("public/icon.png", "assets/thumbnail-1-1600x1200.png", "assets/thumbnail-2-1600x1200.png"):
+    for path in (
+        "public/icon.png",
+        "assets/icon-512.png",
+        "assets/avatar-400.png",
+        "assets/thumbnail-1-1600x1200.png",
+        "assets/thumbnail-2-1600x1200.png",
+    ):
         with Image.open(os.path.join(ROOT, path)) as im:
             print(path, im.size, os.path.getsize(os.path.join(ROOT, path)), "bytes")
 
