@@ -1,0 +1,266 @@
+/* Plugin styles. Colors, fonts and control sizes come from @framer/plugin/framer.css, so light and dark mode follow
+   Framer. Spacing follows the official plugin starters: 15px side padding, 30px controls, 10px gaps. */
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 15px;
+    height: 100%;
+    gap: 15px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-height: 100%;
+}
+
+h2 {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 30px;
+    color: var(--framer-color-text);
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hint,
+.attribution,
+.muted {
+    color: var(--framer-color-text-tertiary);
+}
+
+.hint,
+.attribution {
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.warning {
+    color: var(--framer-color-text-secondary);
+}
+
+.wide {
+    width: 100%;
+}
+
+.grow {
+    flex: 1;
+    min-width: 0;
+}
+
+/* ---------- segmented control ---------- */
+
+.segmented {
+    display: flex;
+    gap: 2px;
+    padding: 2px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: var(--framer-color-bg-tertiary);
+}
+
+.segmented button {
+    flex: 1;
+    height: 26px;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--framer-color-text-tertiary);
+    font-weight: 500;
+}
+
+.segmented button:hover,
+.segmented button:focus-visible {
+    background: transparent;
+    color: var(--framer-color-text);
+}
+
+.segmented button.active {
+    background-color: var(--framer-color-bg);
+    color: var(--framer-color-text);
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+[data-framer-theme="dark"] .segmented button.active {
+    background-color: var(--framer-color-bg-secondary);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- rows ---------- */
+
+.check-row,
+.field-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 22px;
+    color: var(--framer-color-text-secondary);
+}
+
+.field-row {
+    min-height: 30px;
+}
+
+.check-row {
+    cursor: pointer;
+}
+
+.check-row.locked {
+    cursor: default;
+}
+
+.check-row input[type="checkbox"] {
+    flex-shrink: 0;
+}
+
+.check-row.field {
+    align-items: flex-start;
+}
+
+.check-row.field input[type="checkbox"] {
+    margin-top: 2px;
+}
+
+.field-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.field-text > span:first-child {
+    color: var(--framer-color-text);
+}
+
+.field-text .muted {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ---------- CMS footer ---------- */
+
+.cms footer {
+    position: sticky;
+    bottom: 0;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 15px;
+    background-color: var(--framer-color-bg);
+}
+
+.cms footer::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to bottom, transparent, var(--framer-color-bg));
+    pointer-events: none;
+}
+
+main.cms {
+    overflow-y: auto;
+    padding-bottom: 0;
+}
+
+.confirm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.confirm p {
+    color: var(--framer-color-text);
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+button.danger {
+    color: #fff;
+    background-color: #e5484d;
+}
+
+button.danger:hover,
+button.danger:focus {
+    background-color: #d13438;
+}
+
+/* ---------- canvas ---------- */
+
+main.canvas {
+    gap: 10px;
+}
+
+.ammo-list {
+    flex: 1;
+    min-height: 120px;
+    overflow-y: auto;
+    list-style: none;
+    border-radius: 8px;
+    background-color: var(--framer-color-bg-secondary);
+}
+
+.ammo-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px 10px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--framer-color-divider);
+    outline: none;
+}
+
+.ammo-list li:last-child {
+    border-bottom: none;
+}
+
+.ammo-list li:hover,
+.ammo-list li:focus-visible {
+    background-color: var(--framer-color-bg-tertiary);
+}
+
+.ammo-list li.selected {
+    background-color: var(--framer-color-tint-dimmed);
+}
+
+.ammo-list li.selected .title {
+    color: var(--framer-color-tint);
+}
+
+.ammo-list .title {
+    color: var(--framer-color-text);
+}
+
+.ammo-list li.empty {
+    cursor: default;
+    color: var(--framer-color-text-tertiary);
+}
+
+.preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background-color: var(--framer-color-bg-tertiary);
+    color: var(--framer-color-text);
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}

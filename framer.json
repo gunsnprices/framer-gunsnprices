@@ -1,0 +1,6 @@
+{
+  "id": "ad25e5",
+  "name": "Gun & Ammo Data",
+  "modes": ["canvas", "configureManagedCollection", "syncManagedCollection"],
+  "icon": "/icon.png"
+}

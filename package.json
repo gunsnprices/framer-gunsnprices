@@ -1,0 +1,59 @@
+{
+  "name": "framer-gunsnprices",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Gun & Ammo Data: a Framer plugin that syncs a CMS collection of firearm calibers or sample gun and ammo products from the GunsNPrices catalog, and inserts the cost per round of an ammo box as text. Offline.",
+  "homepage": "https://gunsnprices.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gunsnprices/framer-gunsnprices.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gunsnprices/framer-gunsnprices/issues"
+  },
+  "author": "GunsNPrices <app@gunsnprices.com> (https://gunsnprices.com)",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "framer",
+    "framer-plugin",
+    "cms",
+    "sample-data",
+    "firearms",
+    "guns",
+    "ammo",
+    "caliber",
+    "gunsnprices"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "pack": "framer-plugin-tools pack --output dist/plugin.zip",
+    "check-typescript": "tsc",
+    "test": "vitest run",
+    "check": "tsc && vitest run",
+    "data": "node scripts/build-data.mjs",
+    "assets": "python3 scripts/render_assets.py"
+  },
+  "dependencies": {
+    "@framer/plugin": "^5.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/react": "^18.3.24",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^6.0.1",
+    "framer-plugin-tools": "^1.2.3",
+    "typescript": "^5.9.3",
+    "vite": "^8.1.6",
+    "vite-plugin-framer": "^1.1.1",
+    "vite-plugin-mkcert": "^1.17.12",
+    "vitest": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
