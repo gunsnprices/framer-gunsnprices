@@ -189,6 +189,13 @@ main.cms {
     gap: 10px;
 }
 
+/* framer.css gives every button width: 100% and flex-shrink: 0, so two buttons in a row overflow the panel. */
+.row > button {
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+}
+
 button.danger {
     color: #fff;
     background-color: #e5484d;
